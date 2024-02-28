@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+        <%- include ("partials/head.ejs")%>
+  <body>
+    <h1>Create an Account</h1>
+    <form action = "create account" method = "POST">
+       <input type = "text" name = "username" placeholder = "Enter Username">
+     
+         <br>
+         <input type = "password" name = "password" placeholder = "Enter Password">
+         <br>
+         <input type = "password" name = "password" placeholder = "Enter Password Again">
+      
+         <br>
+         <button>Create Account</button>
+         
+         <br>
+     </form>
+
+         <label>
+             <p>Already have an account? Login in.</p>
+             <button onclick = "location.href = 'login'"> Login </button>
+ 
+         </label>
+
+  </body>
+</html>
