@@ -2,7 +2,25 @@
     <html lang="en">
         <%- include ("partials/head.ejs")%>
   <body>
-    <header>Hello everynya!</header>
+    <h1>Account Details</h1>
+    <form action="updateAccount" method="POST">
+        <label for="username">Enter Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="location">New Location:</label>
+        <input type="text" id="location" name="location">
+        <br>
+        <label for="language">New Language:</label>
+        <input type="text" id="language" name="language">
+        <br>
+        <label for="displayname">New Display Name:</label>
+        <input type="text" id="displayname" name="displayname">
+        <br>
+        <label for="picture">New Profile Picture:</label>
+        <input type="file" id="picture" name="picture">
+        <br>
+        <button type="submit">Update Account</button>
+    </form>
 
   </body>
 </html>

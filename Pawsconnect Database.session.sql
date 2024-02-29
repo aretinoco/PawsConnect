@@ -1,2 +1,5 @@
+SELECT * FROM users;
+
+
 
 
