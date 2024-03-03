@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 
     <html lang="en">
-        <%- include ("partials/head.ejs")%>
+        <!-- <%- include ("partials/head.ejs")%> -->
   <body>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">PET</a>
+      <a href="#">USER</a>
+      <a href="#">ABOUT</a>
+      <a href="#">Contact</a>
+      <div class="animation start-home"></div>
+    </nav>
+
+    <div class ="form-container">
+
     <h1>Create an Account</h1>
     <form action = "createAccount" method = "POST">
        <input type = "text" name = "username" placeholder = "Enter Username">
@@ -25,11 +37,13 @@
          <br>
      </form>
 
-         <label>
-             <p>Already have an account? Login in.</p>
+         <div class = "account-links">
+             <!-- <p>Already have an account? Login in.</p> -->
              <button onclick = "location.href = 'login'"> Login </button>
+
+         </div>
  
-         </label>
+        </div>
 
   </body>
 </html>
