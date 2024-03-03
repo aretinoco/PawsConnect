@@ -1,21 +1,58 @@
-body{
-    height: 100%;
-    /* margin:10% auto ; */
-    /* display: flex; 
-       justify-content: center;
-    /* align-items: center; */
-    text-align: center;
-    background-image: url('/Images/image1.jpeg'); 
-  
-    background-size: cover;
-    background-position: center;
-     background-color: #cccccc; 
-    /* background-color: rgba(204, 204, 204, 0.7); */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
-.catPic{
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 400px;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE2fHxjYXR8ZW58MHx8fHwxNzA4NjM0NTM5fDA&amp;ixlib=rb-4.0.3&amp;w=1500');
+    background-size: cover;
+    z-index: -1; /* Ensure the background image stays behind other content */
 }
 
+.login-container {
+    position: relative;
+    z-index: 1; /* Ensure the login container stays above the background image */
+    text-align: center;
+    margin: auto;
+    color: white; /* Adjust text color for better visibility */
+    box-shadow: 0 0 10px rgb(0,0,0,0.1);
+    background: lightgray;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    color: black;
+}
 
-   
+.login-container h1 {
+    margin-bottom: 20px;
+    color: black;
+}
+
+.login-container form {
+    margin-bottom: 20px;
+    
+}
+
+.login-container button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login-container button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
