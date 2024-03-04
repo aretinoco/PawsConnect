@@ -17,11 +17,34 @@ app.get("/", (req, res) => {
   app.get('/createAccount', (req, res) => {
     res.render('createAccount');
   });
-  
-
-app.get('/accountDetails',(req, res) => {
-  res.render('accountDetails');
+  app.get('/accountDetails', (req, res) => {
+    res.render('accountDetails', { accountDetails: null }); 
 });
+
+app.post('/accountDetails',async(req, res) => {
+  try {
+    const username = req.body.username; // Get the username entered by the user
+    const accountDetails = await getAccountDetails(username);
+
+    if (!accountDetails) {
+        // If no account details found for the entered username
+        res.render('accountDetails', { accountDetails: null, error: 'Account not found' });
+    } else {
+        // If account details found
+        res.render('accountDetails', { accountDetails, error: null });
+    }
+} catch (error) {
+    console.error('Error fetching account details:', error);
+    res.status(500).send('Internal Server Error');
+}
+});
+
+async function getAccountDetails(username) {
+  const sql = `SELECT * FROM users WHERE username = ?`;
+  const params = [username];
+  const rows = await executeSQL(sql, params);
+  return rows[0]; 
+}
 
 app.post("/updateAccount", async (req, res) => {
   let username = req.body.username;
