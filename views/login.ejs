@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <%- include ("partials/head.ejs")%>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet"  href="css/styles.css">
+</head>
+
+
+<body>
+
+    <!-- <h1>PAWS CONNECT🐾</h1> -->
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">PET</a>
+      <a href="#">USER</a>
+      <a href="#">ABOUT</a>
+      <a href="#">Contact</a>
+      <div class="animation start-home"></div>
+    </nav>
+
+
+    <div class = "bubble-text">🐾PAWS CONNECT🐾</div> 
+    <div class="background-image"></div>
    
-  <body>
-  
-    <img class ="catPic"
-    src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE2fHxjYXR8ZW58MHx8fHwxNzA4NjM0NTM5fDA&amp;ixlib=rb-4.0.3&amp;w=1500"
-    alt="image">
-    <h1>Login</h1>
-    <form action = "login" method = "POST">
-       <input type = "text" name = "username" placeholder = "Enter Username">
-         <br><br />
-         <input type = "password" name = "password" placeholder = "Enter Password">
-         <br><br />
-         <button> Login </button>
-         <br><br />
-     </form>
+   
 
-         <label>
-             <p>Don't have an account yet?</p>
-             <button onclick = "location.href = 'createAccount'"> Create account </button>
- 
-         </label>
+    <div class="login-container">
+        <h1>Login</h1>
+    
+        <form action="login" method="POST">
+            <input type="text" name="username" placeholder="Enter Username">
+            <br><br />
+            <input type="password" name="password" placeholder="Enter Password">
+            <br><br />
+            <button>Login</button>
+        </form>
 
-  </body>
+        <button onclick="location.href = 'createAccount'">Create account</button>
+    </div>
+    
+    
+</body>
+
 </html>
