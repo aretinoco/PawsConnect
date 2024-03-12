@@ -1,3 +1,5 @@
+<!-- To start server: node index.js -->
+
 Database Tables:
 drop database if exists pawsconnect; 
 create database pawsconnect;
