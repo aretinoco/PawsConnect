@@ -5,6 +5,8 @@ const pool = dbConnection();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 app.get("/", (req, res) => {
     res.redirect('login');
@@ -64,10 +66,14 @@ app.post("/updateAccount", async (req, res) => {
     const { username, password, displayname, email, picture, location, language } = req.body;
   
         console.log(username, password);
+
+        let salt = bcrypt.genSaltSync(saltRounds);
+        let hash = bcrypt.hashSync(salt + password, salt);
+        console.log(salt, hash);
       
-        let sql = `INSERT INTO users (username, displayname, email, password, picture, location, language) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?)`;
-        const values = [username, displayname, email, password, picture, location, language];
+        let sql = `INSERT INTO users (username, displayname, email, password, salt, picture, location, language) 
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+        const values = [username, displayname, email, hash, salt, picture, location, language];
         executeSQL(sql, values);
     
       
