@@ -13,6 +13,20 @@
             "database": "pawsconnect",
             "username": "amrit",
             "password": "password123"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "PawsConnect",
+            "database": "pawsconnect",
+            "username": "root",
+            "password": "SQLcontrasena1"
         }
     ]
 }
