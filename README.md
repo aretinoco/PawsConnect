@@ -10,6 +10,7 @@ CREATE TABLE users (
     displayname VARCHAR(64),
     email VARCHAR(64),
     password VARCHAR(64),
+    salt VARCHAR(64),
     picture VARCHAR(255),
     location VARCHAR(64),
     language VARCHAR(64)
